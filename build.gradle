@@ -1,0 +1,38 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.6.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+group = 'com.my.experiments.microservices.chassis.plugins'
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
+
+dependencies {
+    // gradleApi ependency needed for plugin projects
+    compile gradleApi()
+
+    //base dependencies that carry over to the microservices
+	compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+
+    compile "org.springframework.boot:spring-boot-starter-jersey:${springBootVersion}"
+    compile 'org.projectlombok:lombok:1.16.10'
+    compile 'org.springframework.cloud:spring-cloud-starter-consul-discovery:1.2.1.RELEASE'
+}
