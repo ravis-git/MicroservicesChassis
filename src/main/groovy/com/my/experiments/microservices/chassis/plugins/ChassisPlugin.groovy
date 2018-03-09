@@ -40,4 +40,5 @@ class ChassisPlugin implements Plugin<Project> {
         project.dependencies.add('compile',
                 'com.my.experiments.microservices.chassis.plugins:MicroservicesChassis:0.0.1-SNAPSHOT')
     }
+
 }

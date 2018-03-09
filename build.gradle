@@ -23,7 +23,6 @@ repositories {
 	mavenLocal()
 }
 
-
 dependencies {
     // gradleApi ependency needed for plugin projects
     compile gradleApi()
@@ -35,4 +34,5 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-jersey:${springBootVersion}"
     compile 'org.projectlombok:lombok:1.16.10'
     compile 'org.springframework.cloud:spring-cloud-starter-consul-discovery:1.2.1.RELEASE'
+	  compile 'org.springframework.cloud:spring-cloud-cluster-etcd:1.0.2.RELEASE'
 }
